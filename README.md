@@ -1,4 +1,4 @@
-# TestRLNet
+# TestRL/DRL
 
 !!Q-learning Document!!
 
