@@ -1,7 +1,10 @@
 # TestRLNet
 
-#Q-learning Document
+!!Q-learning Document!!
+
 train_Qlearn.py
 
-#NeuralNetwork Document
+
+!!NeuralNetwork Document!!
+
 train_neural.py
