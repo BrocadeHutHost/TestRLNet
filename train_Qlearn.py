@@ -1,7 +1,7 @@
 import numpy as np
 import test_env as env
 
-
+env.Q = np.load("TRYBYME/q_learning_policy1.npy")
 for episode in range(env.n_episodes):
     state = 0
     done = False
@@ -25,11 +25,7 @@ for episode in range(env.n_episodes):
     if (episode + 1) % 10 == 0:
         print(f"回合 {episode + 1}: 总奖励 = {total_reward:.2f}")
 
-print("\n训练完成后的Q表：")
-print("状态\\动作 | 向左(0) | 向右(1)")
-print("-" * 30)
-for i in range(env.n_states):
-    print(f"    {i}    | {env.Q[i,0]:.2f}   | {env.Q[i,1]:.2f}")
+np.save("TRYBYME/q_learning_policy1.npy", env.Q)
 
 print("简单测试：")
 state = 0

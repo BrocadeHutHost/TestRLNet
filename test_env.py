@@ -1,8 +1,6 @@
 import numpy as np
-# 格子世界：0是起点，4是终点，中间是普通格子
-# 状态空间：0, 1, 2, 3, 4（共5个状态）
-# 动作空间：0(向左), 1(向右)（共2个动作）
-n_states = 5    
+import torch
+n_states = 10    
 n_actions = 2   
 
 
@@ -36,3 +34,9 @@ def step(state, action):
         done = False               
     
     return next_state, reward, done
+
+def encode_state(state, n_states):
+    
+    one_hot = torch.zeros(n_states)
+    one_hot[state] = 1.0
+    return one_hot.unsqueeze(0)
